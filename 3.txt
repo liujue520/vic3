@@ -1,0 +1,409 @@
+namespace = 999997
+
+999997.1 = {
+	type = country_event
+	placement = root
+	title = 1848.6.t
+	desc = 1848.6.d
+	flavor = 1848.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/middleeast_police_breaking_door.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	trigger = {
+		# triggered by je_secret_police
+	}
+	option = {
+		name = "整合所有省份"
+		#整合所有省份
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+			}
+			set_state_type = incorporated
+		}
+	}
+	# option = {
+	# 	name = "控制省份"
+	# 	#控制省份马来亚
+	# 	s:STATE_CEYLON = {
+	# 		set_owner_of_provinces = {
+	# 			country = ROOT
+	# 			provinces = { 
+	# 				39639
+	# 			}
+	# 		}
+	# 	}		
+	# 	# every_scope_state = {
+	# 	# 	limit = {
+	# 	# 		owner = ROOT
+	# 	# 		state_region = s:STATE_SHAOZHOU
+	# 	# 	}
+	# 	# 	state_region = {
+	# 	# 		add_arable_land = 150
+	# 	# 	}	
+	# 	# }	
+	# }
+	option = {
+		name = "改变政体"
+		#改变政体类型
+		set_country_type = unrecognized
+		# gov_khanate
+	}
+	option = {
+		name = "释放国家"
+		#释放国家
+		create_country = { #MNP
+				tag = JAV
+				origin = this
+				state = s:STATE_WEST_JAVA.region_state:YOG
+		}
+		# create_diplomatic_pact = {
+		# 	country = c:HON
+		# 	type = protectorate
+		# }
+		# create_diplomatic_pact = {
+		# 	country = c:BRZ
+		# 	type = customs_union
+		# }
+    	# ruler = {
+		# 	kill_character = yes
+		# }
+	}
+	# option = {
+	# 	name = "国家统治者"
+	# 	#附庸国
+	# 	# name = "皇帝"
+	# 	# create_character = {
+	# 	# 	first_name = "Lingyi"
+	# 	# 	last_name = "Liu"
+	# 	# 	culture = cu:han
+	# 	# 	ruler = yes
+	# 	# 	age = 45
+	# 	# 	interest_group = ig_trade_unions
+	# 	# 	ideology = ideology_social_democrat
+	# 	# 	traits = {
+	# 	# 		innovative
+	# 	# 	}
+	# 	# }
+	# 	# create_character = {
+	# 	# 	first_name = "Xiangke"
+	# 	# 	last_name = "Liu"
+	# 	# 	culture = cu:han
+	# 	# 	heir = yes
+	# 	# 	age = 1
+	# 	# 	interest_group = ig_trade_unions
+	# 	# 	ideology = ideology_social_democrat
+	# 	# 	traits = {
+	# 	# 		innovative
+	# 	# 	}
+	# 	# }
+	# }
+	option = {
+		name = "移除主体民族 改变宗教 改变文化痴迷"
+		#移除主体民族 增加主体民族
+		# remove_primary_culture = cu:yankee
+		# add_primary_culture = cu:basque
+
+		set_state_religion = rel:mahayana
+		# random_scope_culture = {
+		# 	limit = {
+		# 		is_primary_culture_of = ROOT
+		# 	}
+		# 	religion = rel:animist
+		# }
+		every_scope_character = {
+			CHANGE_CHARACTER_RELIGION = rel:mahayana
+		}
+		# every_scope_state = {
+		# 	limit = {
+		# 		owner = ROOT
+		# 	}
+		# 	every_scope_pop = {
+		# 		limit = {
+		# 			religion = rel:sunni
+		# 		}
+		# 		#宗教转化
+		# 		change_pop_religion = { target = rel:mahayana value = 1 }		
+		# 	}
+		# }
+		#cu:han = {
+		#	add_cultural_obsession = services
+		#}
+		#cu:han = {
+		#	remove_cultural_obsession = opium
+		#}
+	}
+	option = {
+		name = "改变法律"
+		# activate_law = law_type:law_monarchy #君主制
+		# activate_law = law_type:law_chiefdom #酋邦制
+		# activate_law = law_type:law_presidential_republic #总统共和制
+
+
+		# activate_law = law_type:law_national_supremacy #民族至上
+		activate_law = law_type:law_ethnostate #民族国家
+		# activate_law = law_type:law_racial_segregation #种族隔离
+
+		# activate_law = law_type:law_closed_borders #关闭边境
+		activate_law = law_type:law_migration_controls #移民控制
+
+		# activate_law = law_type:law_slavery_banned #禁止蓄奴
+		# activate_law = law_type:law_debt_slavery  #债务奴隶制
+		# activate_law = law_type:law_legacy_slavery #遗留奴隶制
+
+	    # activate_law = law_type:law_state_religion #国教		
+
+	    # activate_law = law_type:law_womens_suffrage #妇女选举权
+	    # activate_law = law_type:law_no_social_security #无社会保障
+	    # activate_law = law_type:law_public_schools #公立学校
+	    # activate_law = law_type:law_graduated_taxation #累进税制
+	    # activate_law = law_type:law_protectionism #贸易保护
+	    # activate_law = law_type:law_interventionism #经济干预
+	    # activate_law = law_type:law_serfdom_banned #废除农奴制
+	    # activate_law = law_type:law_professional_army #职业军队
+	    # activate_law = law_type:law_protected_speech #言论保护
+		
+	}
+	option = {
+		name = "增加死亡率"
+		#控制省份马来亚
+		add_modifier = {
+			name = mortality_mult_modifier
+			months = normal_modifier_time
+		}
+	}
+	option = {
+		name = "增加本土移除本土"
+		#控制省份马来亚
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+
+				# NOT = {
+				# 	state_region = s:STATE_WYOMING
+				# }
+				# OR= { 
+				# 	state_region = s:STATE_BOLIVAR
+				# }
+				state_region = s:STATE_NORTHERN_CAPE
+			}
+			state_region = {
+				# add_homeland = anglo_canadian
+				remove_homeland = boer
+				# remove_homeland = zhuang
+			}
+		}
+	}
+	option = {
+		name = "移民 其他地区"
+		#移民到其他地区
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+				# NOT = { state_region = s:STATE_ULSTER }
+				# OR= { 
+				# 	state_region = s:STATE_CONNAUGHT
+				# }
+				# state_region = s:STATE_BOHEMIA
+				NOT = {
+					state_region = {
+						is_homeland = cu:polynesian
+					}
+				}
+			}
+			every_scope_pop = {
+				limit = {
+					# NOT = { pop_employment_building_group = bg_service }
+					# NOT = { pop_employment_building_group = bg_agriculture }
+					# NOT = { pop_employment_building_group = bg_plantations }
+					# NOT = { pop_employment_building_group = bg_ranching }
+					# NOT = { pop_employment_building_group = bg_mining }
+					# NOT = { pop_employment_building_group = bg_manufacturing }
+					# NOT = { pop_employment_building_group = bg_urban_facilities }
+					# NOT = { pop_employment_building_group = bg_bureaucracy }
+					# NOT = { pop_employment_building_group = bg_government }
+					# NOT = { pop_employment_building_group = bg_trade }
+					# NOT = { pop_employment_building_group = bg_infrastructure }
+					# NOT = { pop_employment_building_group = bg_military }
+					# NOT = { pop_employment_building_group = bg_special }
+					# NOT = { pop_employment_building_group = bg_public_infrastructure }
+					# NOT = { pop_employment_building_group = bg_construction }
+					# NOT = { pop_employment_building_group = bg_rubber }
+					# NOT = { pop_employment_building_group = bg_logging }
+					# NOT = { pop_employment_building_group = bg_fishing }
+					# NOT = { pop_employment_building_group = bg_whaling }
+					# NOT = { pop_employment_building_group = building_barracks }
+					# NOT = { pop_employment_building_group = building_naval_base }
+					# NOT = { pop_employment_building_group = bg_oil_extraction }
+					AND = {
+						culture = cu:polynesian
+						# religion = rel:sunni
+						# religion = rel:hindu
+						# NOT = { culture = cu:aborigine }
+						# is_employed = no
+					}
+				}
+
+				# move_pop = s:STATE_BEIJING.region_state:CHI
+				# move_pop = s:STATE_ZHEJIANG.region_state:CHI
+				move_pop = s:STATE_TAHITI.region_state:PLY
+
+			}
+		}
+	}
+	option = {
+		#改变宗教
+		name = "改变宗教-部分人口"
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+				# state_region = s:STATE_NORTHERN_ANHUI
+			}
+			every_scope_pop = { 
+				limit = {
+				    NOT = { pop_employment_building_group = bg_service }
+					NOT = { pop_employment_building_group = bg_agriculture }
+					NOT = { pop_employment_building_group = bg_plantations }
+					NOT = { pop_employment_building_group = bg_ranching }
+					NOT = { pop_employment_building_group = bg_mining }
+					NOT = { pop_employment_building_group = bg_manufacturing }
+					NOT = { pop_employment_building_group = bg_urban_facilities }
+					NOT = { pop_employment_building_group = bg_bureaucracy }
+					NOT = { pop_employment_building_group = bg_government }
+					NOT = { pop_employment_building_group = bg_trade }
+					NOT = { pop_employment_building_group = bg_infrastructure }
+					NOT = { pop_employment_building_group = bg_military }
+					NOT = { pop_employment_building_group = bg_special }
+					NOT = { pop_employment_building_group = bg_public_infrastructure }
+					NOT = { pop_employment_building_group = bg_construction }
+					NOT = { pop_employment_building_group = bg_rubber }
+					NOT = { pop_employment_building_group = bg_logging }
+					NOT = { pop_employment_building_group = bg_fishing }
+					NOT = { pop_employment_building_group = bg_whaling }
+					NOT = { pop_employment_building_group = building_barracks }
+					NOT = { pop_employment_building_group = building_naval_base }
+					NOT = { pop_employment_building_group = bg_oil_extraction }
+					AND ={
+						# religion = rel:mahayana
+						culture = cu:han
+						is_pop_type = laborers
+					}
+				} 
+				change_pop_religion = { target = rel:hindu value = 0.1 }
+			}
+		}
+	}
+	option = {
+		name = "宗教转变"
+		#移民到其他地区
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+				# NOT = { state_region = s:STATE_ULSTER }
+				# OR= { 
+				# 	state_region = s:STATE_TRANS_BAIKAL
+				# }
+
+				# state_region = s:STATE_SUZHOU
+				# NOT = {
+				# 	state_region = {
+				# 		is_homeland = cu:yue
+				# 	}
+				# }
+			}
+			every_scope_pop = {
+				limit = {
+					# NOT = { culture = cu:thai }
+					# NOT = { religion = rel:gelugpa }
+					culture = cu:han
+					religion = rel:hindu
+				}
+				#文化转化#宗教转化
+				# change_pop_culture = { target = cu:han value = 1 }
+				# change_pop_culture = { target = cu:platinean value = 1 }
+				change_pop_religion = { target = rel:mahayana value = 1 }
+
+				# set_pop_literacy = {
+				# 	literacy_rate = 0.5
+				# }				
+			}
+		}
+	}
+	option = {
+		name = "文化转变"
+		#移民到其他地区
+		every_scope_state = {
+			limit = {
+				owner = ROOT
+				# NOT = { state_region = s:STATE_ULSTER }
+				# OR= { 
+				# 	state_region = s:STATE_CONNAUGHT
+				# }
+				#state_region = s:STATE_SOUTHERN_MANCHURIA
+				# NOT = {
+				# 	state_region = {
+				# 		is_homeland = cu:sindi
+				# 	}
+				# }
+			}
+			every_scope_pop = {
+				limit = {
+					# 巴西
+					# AND = {
+					# 	NOT = { culture = cu:brazilian }
+					# 	NOT = { culture = cu:afro_brazilian }
+					# 	culture = { has_discrimination_trait = african_heritage	 }
+				    # }
+
+					# 加拿大
+					# AND = {
+					# 	NOT = { culture = cu:anglo_canadian }
+					# 	NOT = { culture = cu:franco_canadian }
+					# 	NOT = { culture = cu:yankee }
+					# 	culture = { has_discrimination_trait = european_heritage	 }
+				    # }
+
+					# 美国
+					# AND = {
+					# 	NOT = { culture = cu:yankee }
+					# 	NOT = { culture = cu:dixie }
+					# 	NOT = { culture = cu:cajun }
+					# 	NOT = { culture = cu:ashkenazi }
+					# 	culture = { has_discrimination_trait = european_heritage	 }
+				    # }
+					# 非洲
+					# OR = {
+					# 	culture = { has_discrimination_trait = west_african_culture_group }
+					# 	culture = { has_discrimination_trait = central_african_culture_group }
+					# 	culture = { has_discrimination_trait = east_african_culture_group }
+					# 	culture = { has_discrimination_trait = southern_african_culture_group }
+				    # }
+					# NOT = { religion = rel:gelugpa }
+					culture = cu:han
+					# religion = rel:catholic
+					# OR = {
+					# 	NOT = { 
+					# 		culture = { 
+					# 			has_discrimination_trait = american_heritage
+					# 		}
+					# 	}
+					# }
+				}
+				#文化转化#宗教转化
+				change_pop_culture = { target = cu:ashkenazi value = 1 }
+				change_pop_religion = { target = rel:jewish value = 1 }
+			}
+		}
+	}
+
+}
+
