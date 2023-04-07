@@ -1,0 +1,6 @@
+mortality_mult_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_birth_rate_mult = -0.5
+}
+
+
