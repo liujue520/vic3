@@ -110,8 +110,8 @@ namespace = 999997
 	option = {
 		name = "移除主体民族 改变宗教 改变文化痴迷"
 		#移除主体民族 增加主体民族
-		# remove_primary_culture = cu:yankee
-		add_primary_culture = cu:ashkenazi
+		# remove_primary_culture = cu:ashkenazi
+		add_primary_culture = cu:cajun
 
 		# set_state_religion = rel:mahayana
 		# random_scope_culture = {
@@ -145,24 +145,26 @@ namespace = 999997
 	option = {
 		name = "改变法律"
 		# activate_law = law_type:law_monarchy #君主制
-		# activate_law = law_type:law_chiefdom #酋邦制
+		activate_law = law_type:law_chiefdom #酋邦制
 		# activate_law = law_type:law_presidential_republic #总统共和制
 
 
 		# activate_law = law_type:law_national_supremacy #民族至上
-		activate_law = law_type:law_ethnostate #民族国家
+		# activate_law = law_type:law_ethnostate #民族国家
 		# activate_law = law_type:law_racial_segregation #种族隔离
 
 		# activate_law = law_type:law_closed_borders #关闭边境
-		activate_law = law_type:law_migration_controls #移民控制
+		# activate_law = law_type:law_migration_controls #移民控制
 
 		# activate_law = law_type:law_slavery_banned #禁止蓄奴
 		# activate_law = law_type:law_debt_slavery  #债务奴隶制
 		# activate_law = law_type:law_legacy_slavery #遗留奴隶制
 
-	    # activate_law = law_type:law_state_religion #国教		
+	    # activate_law = law_type:law_state_religion #国教	
 
-	    # activate_law = law_type:law_womens_suffrage #妇女选举权
+	    activate_law = law_type:law_oligarchy #寡头制		
+
+	    # activate_lalaw_womens_suffrage #妇女选举权
 	    # activate_law = law_type:law_no_social_security #无社会保障
 	    # activate_law = law_type:law_public_schools #公立学校
 	    # activate_law = law_type:law_graduated_taxation #累进税制
@@ -388,7 +390,7 @@ namespace = 999997
 					# 	culture = { has_discrimination_trait = southern_african_culture_group }
 				    # }
 					# NOT = { religion = rel:gelugpa }
-					culture = cu:han
+					culture = cu:spanish
 					# religion = rel:catholic
 					# OR = {
 					# 	NOT = { 
@@ -399,8 +401,8 @@ namespace = 999997
 					# }
 				}
 				#文化转化#宗教转化
-				change_pop_culture = { target = cu:ashkenazi value = 1 }
-				change_pop_religion = { target = rel:jewish value = 1 }
+				change_pop_culture = { target = cu:caribeno value = 1 }
+				# change_pop_religion = { target = rel:jewish value = 1 }
 			}
 		}
 	}
