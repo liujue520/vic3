@@ -111,18 +111,18 @@ namespace = 999997
 		name = "移除主体民族 改变宗教 改变文化痴迷"
 		#移除主体民族 增加主体民族
 		# remove_primary_culture = cu:yankee
-		# add_primary_culture = cu:basque
+		add_primary_culture = cu:ashkenazi
 
-		set_state_religion = rel:mahayana
+		# set_state_religion = rel:mahayana
 		# random_scope_culture = {
 		# 	limit = {
 		# 		is_primary_culture_of = ROOT
 		# 	}
 		# 	religion = rel:animist
 		# }
-		every_scope_character = {
-			CHANGE_CHARACTER_RELIGION = rel:mahayana
-		}
+		# every_scope_character = {
+		# 	CHANGE_CHARACTER_RELIGION = rel:mahayana
+		# }
 		# every_scope_state = {
 		# 	limit = {
 		# 		owner = ROOT
